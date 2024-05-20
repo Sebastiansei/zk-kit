@@ -1,0 +1,85 @@
+<!DOCTYPE html><html class="default" lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>@zk-kit/groth16 | zk-kit</title><meta name="description" content="Documentation for zk-kit"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="../assets/style.css"/><link rel="stylesheet" href="../assets/highlight.css"/><script defer src="../assets/main.js"></script><script async src="../assets/icons.js" id="tsd-icons-script"></script><script async src="../assets/search.js" id="tsd-search-script"></script><script async src="../assets/navigation.js" id="tsd-nav-script"></script></head><body><script>document.documentElement.dataset.theme = localStorage.getItem("tsd-theme") || "os";document.body.style.display="none";setTimeout(() => app?app.showPage():document.body.style.removeProperty("display"),500)</script><header class="tsd-page-toolbar"><div class="tsd-toolbar-contents container"><div class="table-cell" id="tsd-search" data-base=".."><div class="field"><label for="tsd-search-field" class="tsd-widget tsd-toolbar-icon search no-caption"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><use href="../assets/icons.svg#icon-search"></use></svg></label><input type="text" id="tsd-search-field" aria-label="Search"/></div><div class="field"><div id="tsd-toolbar-links"></div></div><ul class="results"><li class="state loading">Preparing search index...</li><li class="state failure">The search index is not available</li></ul><a href="../index.html" class="title">zk-kit</a></div><div class="table-cell" id="tsd-widgets"><a href="#" class="tsd-widget tsd-toolbar-icon menu no-caption" data-toggle="menu" aria-label="Menu"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><use href="../assets/icons.svg#icon-menu"></use></svg></a></div></div></header><div class="container container-main"><div class="col-content"><div class="tsd-page-title"><ul class="tsd-breadcrumb"><li><a href="../index.html">zk-kit</a></li><li><a href="_zk_kit_groth16.html">@zk-kit/groth16</a></li></ul><h1>Module @zk-kit/groth16</h1></div><section class="tsd-panel tsd-typography"><p align="center">
+    <h1 align="center">
+        SnarkJS Groth16
+    </h1>
+    <p align="center">A snippet of SnarkJS code for verifying and generating Groth16 proofs only.</p>
+</p>
+
+<p align="center">
+    <a href="https://github.com/privacy-scaling-explorations/zk-kit">
+        <img src="https://img.shields.io/badge/project-zk--kit-blue.svg?style=flat-square">
+    </a>
+    <a href="https://github.com/privacy-scaling-explorations/zk-kit/tree/main/packages/groth16/LICENSE">
+        <img alt="NPM license" src="https://img.shields.io/npm/l/%40zk-kit%2Fgroth16?style=flat-square">
+    </a>
+    <a href="https://www.npmjs.com/package/@zk-kit/groth16">
+        <img alt="NPM version" src="https://img.shields.io/npm/v/@zk-kit/groth16?style=flat-square" />
+    </a>
+    <a href="https://npmjs.org/package/@zk-kit/groth16">
+        <img alt="Downloads" src="https://img.shields.io/npm/dm/@zk-kit/groth16.svg?style=flat-square" />
+    </a>
+    <a href="https://bundlephobia.com/package/@zk-kit/groth16">
+        <img alt="npm bundle size (scoped)" src="https://img.shields.io/bundlephobia/minzip/@zk-kit/groth16" />
+    </a>
+    <a href="https://eslint.org/">
+        <img alt="Linter eslint" src="https://img.shields.io/badge/linter-eslint-8080f2?style=flat-square&logo=eslint" />
+    </a>
+    <a href="https://prettier.io/">
+        <img alt="Code style prettier" src="https://img.shields.io/badge/code%20style-prettier-f8bc45?style=flat-square&logo=prettier" />
+    </a>
+</p>
+
+<div align="center">
+    <h4>
+        <a href="https://appliedzkp.org/discord">
+            🗣️ Chat &amp; Support
+        </a>
+        <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+        <a href="https://zkkit.pse.dev/modules/_zk_kit_groth16.html">
+            📘 Docs
+        </a>
+    </h4>
+</div>
+
+<blockquote>
+<p>[!WARNING]<br>This package is no longer maintained as <a href="https://github.com/iden3/snarkjs">SnarkJS</a> has integrated most of the above optimizations. Please, consider installing it instead.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>This package contains <a href="https://github.com/iden3/snarkjs">SnarkJS</a> functions for generating and verifying zero knowledge proofs with Groth16 specifically. In addition to the original code it also uses the cached <code>bn128</code> curve if it already exists, making verification and generation of consecutive proofs faster.</th>
+</tr>
+</thead>
+</table>
+<p>Some advantages of using this package instead of <code>snarkjs</code> directly are:</p>
+<ul>
+<li>It only includes code to verify and generate Groth16 proofs, making your final bundle lighter.</li>
+<li>It doesn&#39;t call the <a href="https://github.com/iden3/ffjavascript">ffjavascript</a> <code>buildBn128</code> function if a <code>bn128</code> cached curve already exists, making verification and generation of consecutive proofs much faster (e.g. verification seems to be ~9 times faster after the first one).</li>
+<li>It includes TS types.</li>
+<li>It provides an ESM bundle that is compatible with browsers. So there is no need to add any polyfill or additional configuration.</li>
+</ul>
+<a id="md:references" class="tsd-anchor"></a><h2><a href="#md:references">References</a></h2><ol>
+<li>Jens Groth. <em>On the Size of Pairing-Based Non-interactive Arguments</em>. 2016-04-28. <a href="https://link.springer.com/chapter/10.1007/978-3-662-49896-5_11">https://link.springer.com/chapter/10.1007/978-3-662-49896-5_11</a>.</li>
+</ol>
+<hr>
+<a id="md:🛠-install" class="tsd-anchor"></a><h2><a href="#md:🛠-install">🛠 Install</a></h2><a id="md:npm-or-yarn" class="tsd-anchor"></a><h3><a href="#md:npm-or-yarn">npm or yarn</a></h3><p>Install the <code>@zk-kit/groth16</code> package and its peer dependencies with npm:</p>
+<pre><code class="language-bash"><span class="hl-0">npm</span><span class="hl-1"> </span><span class="hl-2">i</span><span class="hl-1"> </span><span class="hl-2">@zk-kit/groth16</span>
+</code><button>Copy</button></pre>
+<p>or yarn:</p>
+<pre><code class="language-bash"><span class="hl-0">yarn</span><span class="hl-1"> </span><span class="hl-2">add</span><span class="hl-1"> </span><span class="hl-2">@zk-kit/groth16</span>
+</code><button>Copy</button></pre>
+<a id="md:📜-usage" class="tsd-anchor"></a><h2><a href="#md:📜-usage">📜 Usage</a></h2><blockquote>
+<p>[!WARNING]<br>You will need to provide your own circuits here in your specified path. Remember to define your circuit input and rename the files accordingly.</p>
+</blockquote>
+<pre><code class="language-typescript"><span class="hl-10">import</span><span class="hl-1"> { </span><span class="hl-11">prove</span><span class="hl-1">, </span><span class="hl-11">verify</span><span class="hl-1">, </span><span class="hl-11">buildBn128</span><span class="hl-1"> } </span><span class="hl-10">from</span><span class="hl-1"> </span><span class="hl-2">&quot;@zk-kit/groth16&quot;</span><br/><br/><span class="hl-3">// Build the BN128 curve for Groth16.</span><br/><span class="hl-3">// https://github.com/iden3/ffjavascript/blob/master/src/wasm_field1.js</span><br/><span class="hl-10">await</span><span class="hl-1"> </span><span class="hl-0">buildBn128</span><span class="hl-1">() </span><span class="hl-3">// WasmField1</span><br/><br/><span class="hl-3">// Define your circuit input.</span><br/><span class="hl-3">// const input = {</span><br/><span class="hl-3">//     input1: 1,</span><br/><span class="hl-3">//     input2: 2,</span><br/><span class="hl-3">//     inputN: &quot;N&quot;</span><br/><span class="hl-3">// }</span><br/><br/><span class="hl-3">// Compute the proof.</span><br/><span class="hl-4">const</span><span class="hl-1"> </span><span class="hl-12">proof</span><span class="hl-1"> = </span><span class="hl-10">await</span><span class="hl-1"> </span><span class="hl-0">prove</span><span class="hl-1">(</span><span class="hl-11">input</span><span class="hl-1">, </span><span class="hl-2">&quot;&lt;YOUR-PATH&gt;/circuit.zkey&quot;</span><span class="hl-1">, </span><span class="hl-2">&quot;&lt;YOUR-PATH&gt;/circuit.wasm&quot;</span><span class="hl-1">)</span><br/><br/><span class="hl-3">/*</span><br/><span class="hl-3">{</span><br/><span class="hl-3">    proof: {</span><br/><span class="hl-3">        pi_a: [</span><br/><span class="hl-3">            &#39;8259885706934172848141475422209230656096448508815982888010519325096632035723&#39;,</span><br/><span class="hl-3">            &#39;3142099172052192611205205328157407975469005554072266974009053708782134081166&#39;,</span><br/><span class="hl-3">            &#39;1&#39;</span><br/><span class="hl-3">        ],</span><br/><span class="hl-3">        pi_b: [ [Array], [Array], [Array] ],</span><br/><span class="hl-3">        pi_c: [</span><br/><span class="hl-3">            &#39;13863804425308906943736719856399634046638544298517159271373916818387594277305&#39;,</span><br/><span class="hl-3">            &#39;21340646707244019956779928177502771923632450548108204371058275686712196195969&#39;,</span><br/><span class="hl-3">            &#39;1&#39;</span><br/><span class="hl-3">        ],</span><br/><span class="hl-3">        protocol: &#39;groth16&#39;,</span><br/><span class="hl-3">        curve: &#39;bn128&#39;</span><br/><span class="hl-3">    },</span><br/><span class="hl-3">    publicSignals: [</span><br/><span class="hl-3">        &#39;527758365153958423212195330785598453331596731388181860789801455413116800554&#39;,</span><br/><span class="hl-3">        &#39;19104626566001952573667666924569656871967113105870778077087237826253896482830&#39;,</span><br/><span class="hl-3">        &#39;122&#39;</span><br/><span class="hl-3">    ]</span><br/><span class="hl-3">}</span><br/><span class="hl-3">*/</span><br/><span class="hl-11">console</span><span class="hl-1">.</span><span class="hl-0">log</span><span class="hl-1">(</span><span class="hl-11">proof</span><span class="hl-1">)</span><br/><br/><span class="hl-3">// Verify the proof.</span><br/><span class="hl-4">const</span><span class="hl-1"> </span><span class="hl-12">response</span><span class="hl-1"> = </span><span class="hl-10">await</span><span class="hl-1"> </span><span class="hl-0">verify</span><span class="hl-1">(</span><span class="hl-2">&quot;&lt;YOUR-PATH&gt;/circuit_verification_key.json&quot;</span><span class="hl-1">, </span><span class="hl-11">proof</span><span class="hl-1">)</span><br/><br/><span class="hl-3">// true or false.</span><br/><span class="hl-11">console</span><span class="hl-1">.</span><span class="hl-0">log</span><span class="hl-1">(</span><span class="hl-11">response</span><span class="hl-1">)</span>
+</code><button>Copy</button></pre>
+</section><section class="tsd-panel-group tsd-index-group"><section class="tsd-panel tsd-index-panel"><h3 class="tsd-index-heading uppercase">Index</h3><section class="tsd-index-section"><h3 class="tsd-index-heading">Interfaces</h3><div class="tsd-index-list"><a href="../interfaces/_zk_kit_groth16.CircuitSignals.html" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-256"></use></svg><span>Circuit<wbr/>Signals</span></a>
+<a href="../interfaces/_zk_kit_groth16.Groth16Proof.html" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-256"></use></svg><span>Groth16<wbr/>Proof</span></a>
+</div></section><section class="tsd-index-section"><h3 class="tsd-index-heading">Type Aliases</h3><div class="tsd-index-list"><a href="../types/_zk_kit_groth16.NumericString.html" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-2097152"></use></svg><span>Numeric<wbr/>String</span></a>
+<a href="../types/_zk_kit_groth16.PublicSignals.html" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-2097152"></use></svg><span>Public<wbr/>Signals</span></a>
+<a href="../types/_zk_kit_groth16.SignalValueType.html" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-2097152"></use></svg><span>Signal<wbr/>Value<wbr/>Type</span></a>
+<a href="../types/_zk_kit_groth16.ZKArtifact.html" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-2097152"></use></svg><span>ZKArtifact</span></a>
+</div></section><section class="tsd-index-section"><h3 class="tsd-index-heading">Functions</h3><div class="tsd-index-list"><a href="../functions/_zk_kit_groth16.buildBn128.html" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-64"></use></svg><span>build<wbr/>Bn128</span></a>
+<a href="../functions/_zk_kit_groth16.prove.html" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-64"></use></svg><span>prove</span></a>
+<a href="../functions/_zk_kit_groth16.verify.html" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-64"></use></svg><span>verify</span></a>
+</div></section></section></section></div><div class="col-sidebar"><div class="page-menu"><div class="tsd-navigation settings"><details class="tsd-index-accordion"><summary class="tsd-accordion-summary"><h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>Settings</h3></summary><div class="tsd-accordion-details"><div class="tsd-filter-visibility"><h4 class="uppercase">Member Visibility</h4><form><ul id="tsd-filter-options"><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-protected" name="protected"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Protected</span></label></li><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-private" name="private"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Private</span></label></li><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-inherited" name="inherited" checked/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Inherited</span></label></li><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-external" name="external"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>External</span></label></li></ul></form></div><div class="tsd-theme-toggle"><h4 class="uppercase">Theme</h4><select id="tsd-theme"><option value="os">OS</option><option value="light">Light</option><option value="dark">Dark</option></select></div></div></details></div><details open class="tsd-index-accordion tsd-page-navigation"><summary class="tsd-accordion-summary"><h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>On This Page</h3></summary><div class="tsd-accordion-details"><a href="#md:references"><span>References</span></a><a href="#md:🛠-install"><span>🛠 <wbr/>Install</span></a><ul><li><a href="#md:npm-or-yarn"><span>npm or yarn</span></a></li></ul><a href="#md:📜-usage"><span>📜 <wbr/>Usage</span></a></div></details></div><div class="site-menu"><nav class="tsd-navigation"><a href="../index.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-1"></use></svg><span>zk-kit</span></a><ul class="tsd-small-nested-navigation" id="tsd-nav-container" data-base=".."><li>Loading...</li></ul></nav></div></div></div><footer><p class="tsd-generator">Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p></footer><div class="overlay"></div></body></html>
