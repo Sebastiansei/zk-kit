@@ -1,4 +1,4 @@
-/**
+/**packages/utils/src/error-handlers.ts
  * @module ErrorHandlers
  * This module is designed to provide utility functions for validating
  * function parameters. It includes functions that throw type errors if
